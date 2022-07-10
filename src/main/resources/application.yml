@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://actshop2.cq5wpqsqhs1s.us-west-2.rds.amazonaws.com:5432/actshop
+    username: actshop
+    password: 10293847
+
