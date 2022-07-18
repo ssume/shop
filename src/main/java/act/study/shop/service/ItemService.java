@@ -20,4 +20,9 @@ public class ItemService {
         itemRepository.findAll().forEach(e -> item.add(e));
         return item;
     }
+
+    public ItemVO addItem(ItemVO itemVO){
+        itemRepository.save(itemVO);
+        return itemVO;
+    }
 }

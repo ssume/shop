@@ -7,9 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.awt.*;
 import java.util.List;
@@ -25,5 +23,10 @@ public class ItemController {
     public ResponseEntity<List<ItemVO>> getItemAll() {
         List<ItemVO> item = itemService.getItemAll();
         return new ResponseEntity<List<ItemVO>>(item, HttpStatus.OK);
+    }
+
+    @PostMapping(value = "/add", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<ItemVO> addItem(@RequestBody ItemVO itemVO){
+        return new ResponseEntity<ItemVO>(itemService.addItem(itemVO),HttpStatus.OK);
     }
 }

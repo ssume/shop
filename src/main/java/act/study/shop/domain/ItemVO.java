@@ -47,4 +47,7 @@ public class ItemVO {
     @Column(name="item_size")
     private Long itemSize;
 
+    @Column(name="item_color")
+    private String itemColor;
+
 }
